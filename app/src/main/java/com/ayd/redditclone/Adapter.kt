@@ -7,7 +7,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class Adapter: RecyclerView.Adapter<Adapter.AdapterViewHolder>() {
+class Adapter(private val listener : PhotoShare): RecyclerView.Adapter<Adapter.AdapterViewHolder>() {
 
     private val items: ArrayList<Photos> = ArrayList()
 
@@ -69,6 +69,10 @@ class Adapter: RecyclerView.Adapter<Adapter.AdapterViewHolder>() {
 
         }
 
+        //like and dislike tıklanmadan önce normal olursa altlarda da değişiklliklerin uygulanması önlenmiş olur.
+        holder.like.setImageResource(R.drawable.like)
+        holder.dislike.setImageResource(R.drawable.dislike)
+
         holder.photo.setOnClickListener(object : DoubleClickListener(){
             override fun onDoubleClickListener(p0: View?) {
                 likeFun()
@@ -83,7 +87,9 @@ class Adapter: RecyclerView.Adapter<Adapter.AdapterViewHolder>() {
         dislikeFun()
         }
 
-
+        holder.share.setOnClickListener {
+            listener.PhotoShareClick(currentItems.url)
+        }
 
 
     }
@@ -99,6 +105,12 @@ class Adapter: RecyclerView.Adapter<Adapter.AdapterViewHolder>() {
         notifyDataSetChanged()
 
     }
+
+}
+
+interface PhotoShare {
+
+    fun PhotoShareClick(photoUrl : String)
 
 }
 

@@ -1,6 +1,7 @@
 package com.ayd.redditclone
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),PhotoShare {
 
     private val viewModel: SplashViewModel by viewModels()
     private var photoArray = ArrayList<Photos>()
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         loadPhotos()
 
-        pAdapter = Adapter()
+        pAdapter = Adapter(this)
         photoAdp.adapter = pAdapter
 
         photoAdp.addOnScrollListener(object : RecyclerView.OnScrollListener(){
@@ -81,6 +82,14 @@ class MainActivity : AppCompatActivity() {
 
         })
         SingletonObject.getInstance(this).addToRequestQueue(JsonObjectRequest)
+    }
+
+    override fun PhotoShareClick(photoUrl: String) {
+
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.putExtra(Intent.EXTRA_TEXT,"Reddit post:...\n $photoUrl")
+        intent.type = "text/plain"
+        startActivity(intent)
     }
 
 
