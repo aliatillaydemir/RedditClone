@@ -2,6 +2,7 @@ package com.ayd.redditclone
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 
-class MainActivity : AppCompatActivity(),PhotoShare {
+class MainActivity : AppCompatActivity(),PhotoShare, PhotoDownload {
 
     private val viewModel: SplashViewModel by viewModels()
     private var photoArray = ArrayList<Photos>()
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity(),PhotoShare {
 
         loadPhotos()
 
-        pAdapter = Adapter(this)
+        pAdapter = Adapter(this,this)  //main constructorda kalıtım aldığımız interface için contexti belirtiyoruz(gönderiyoruz)
         photoAdp.adapter = pAdapter
 
         photoAdp.addOnScrollListener(object : RecyclerView.OnScrollListener(){
@@ -91,6 +92,27 @@ class MainActivity : AppCompatActivity(),PhotoShare {
         intent.type = "text/plain"
         startActivity(intent)
     }
+
+    override fun PhotoDownloadClick(photoUrl: String) {
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Build.VERSION.SDK_INT < Build.VERSION_CODES.Q){
+            askPermission(photoUrl)
+        }else{
+            downloadImage(photoUrl)
+        }
+
+
+    }
+
+    private fun downloadImage(photoUrl: String) {
+
+    }
+
+    private fun askPermission(photoUrl: String) {
+
+    }
+
+
 
 
 }

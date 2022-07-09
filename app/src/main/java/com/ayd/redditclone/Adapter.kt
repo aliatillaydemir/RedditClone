@@ -7,7 +7,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class Adapter(private val listener : PhotoShare): RecyclerView.Adapter<Adapter.AdapterViewHolder>() {
+class Adapter(private val listener : PhotoShare, private val downloadListener : PhotoDownload): RecyclerView.Adapter<Adapter.AdapterViewHolder>() {
 
     private val items: ArrayList<Photos> = ArrayList()
 
@@ -22,6 +22,7 @@ class Adapter(private val listener : PhotoShare): RecyclerView.Adapter<Adapter.A
         val like : ImageView = item.findViewById(R.id.like)
         val dislike : ImageView = item.findViewById(R.id.dislike)
         val share : ImageView = item.findViewById(R.id.share)
+        val download : ImageView = item.findViewById(R.id.download)
 
     }
 
@@ -91,6 +92,10 @@ class Adapter(private val listener : PhotoShare): RecyclerView.Adapter<Adapter.A
             listener.PhotoShareClick(currentItems.url)
         }
 
+        holder.download.setOnClickListener {
+            downloadListener.PhotoDownloadClick(currentItems.url)
+        }
+
 
     }
 
@@ -111,6 +116,12 @@ class Adapter(private val listener : PhotoShare): RecyclerView.Adapter<Adapter.A
 interface PhotoShare {
 
     fun PhotoShareClick(photoUrl : String)
+
+}
+
+interface PhotoDownload{
+
+     fun PhotoDownloadClick(photoUrl: String)
 
 }
 

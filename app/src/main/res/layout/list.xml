@@ -16,6 +16,11 @@
             android:layout_width="match_parent"
             android:layout_height="380dp"/>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#101010" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,24 +31,46 @@
                 android:id="@+id/like"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginLeft="25dp"
-                android:src="@drawable/like" />
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/like"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vote"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
 
             <ImageView
                 android:id="@+id/dislike"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="10dp"
                 android:src="@drawable/dislike" />
 
             <ImageView
                 android:id="@+id/share"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginLeft="45dp"
+                android:layout_marginLeft="55dp"
                 android:src="@drawable/share" />
 
+            <ImageView
+                android:id="@+id/download"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="80dp"
+                android:src="@drawable/download" />
+
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#101010" />
 
     </LinearLayout>
 
