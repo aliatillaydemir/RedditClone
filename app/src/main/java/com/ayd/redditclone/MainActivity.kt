@@ -200,7 +200,6 @@ class MainActivity : AppCompatActivity(),PhotoShare, PhotoDownload {
     @TargetApi(Build.VERSION_CODES.M) //M -> marshmallow
     private fun askPermission(photoUrl: String) {
 
-
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
             if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.WRITE_EXTERNAL_STORAGE)){
                 AlertDialog.Builder(this)
