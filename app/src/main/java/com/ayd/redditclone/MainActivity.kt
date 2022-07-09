@@ -197,6 +197,7 @@ class MainActivity : AppCompatActivity(),PhotoShare, PhotoDownload {
     }
 
 
+
     @TargetApi(Build.VERSION_CODES.M) //M -> marshmallow
     private fun askPermission(photoUrl: String) {
 
