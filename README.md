@@ -18,3 +18,5 @@
 ### Multiple Screen Sizes in Different Devices
 <img width="1016" alt="photo8" src="https://user-images.githubusercontent.com/43906043/178158428-9113189e-1e9c-4c46-ae47-8e4c91c7bd9e.png">
 
+<br/>
+- Download the app to your Android device: https://github.com/aliatillaydemir/RedditClone/blob/master/app-debug.apk
