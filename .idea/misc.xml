@@ -4,8 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/King/AndroidStudioProjects/RedditClone/app/src/main/res/drawable/ic_reddit.xml" value="0.1535" />
+        <entry key="..\:/Users/King/AndroidStudioProjects/RedditClone/app/src/main/res/layout-ldpi/list.xml" value="0.30364583333333334" />
+        <entry key="..\:/Users/King/AndroidStudioProjects/RedditClone/app/src/main/res/layout-mdpi/list.xml" value="0.30364583333333334" />
+        <entry key="..\:/Users/King/AndroidStudioProjects/RedditClone/app/src/main/res/layout-xxhdpi/list.xml" value="0.227734375" />
         <entry key="..\:/Users/King/AndroidStudioProjects/RedditClone/app/src/main/res/layout/activity_main.xml" value="0.26268115942028986" />
+        <entry key="..\:/Users/King/AndroidStudioProjects/RedditClone/app/src/main/res/layout/bottom.xml" value="0.30364583333333334" />
         <entry key="..\:/Users/King/AndroidStudioProjects/RedditClone/app/src/main/res/layout/list.xml" value="0.22" />
+        <entry key="..\:/Users/King/AndroidStudioProjects/RedditClone/app/src/main/res/menu/menu_bottom_navigation_bar.xml" value="0.30364583333333334" />
       </map>
     </option>
   </component>
